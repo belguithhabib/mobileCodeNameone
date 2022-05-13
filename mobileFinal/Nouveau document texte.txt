@@ -1,0 +1,31 @@
+{% block javascripts %}
+       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    function onClickBtnLike(event){
+        event.preventDefault();
+        const url =this.href;
+        axios.get(url).then(function (response){
+            console.log(response)
+
+
+        })
+
+    }
+
+
+
+
+
+    document.querySelectorAll('a').forEach(function(link){
+
+        link.addEventListener('click',onClickBtnLike)
+
+    })
+
+
+</script>
+
+
+
+   {% endblock %}
+
